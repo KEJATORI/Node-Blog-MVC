@@ -12,7 +12,7 @@ const dbURI = 'mongodb+srv://kejatori:kejatori1399@cluster0.jpd4b.mongodb.net/no
 mongoose.connect(dbURI, {useNewUrlParser: true, useUnifiedTopology: true})
     .then((result) => {
         console.log('Listening');
-        app.listen(8000 | process.env.PORT);
+        app.listen(8000 || process.env.PORT);
     })
     .catch((err) => {
         console.log(err);
@@ -28,17 +28,17 @@ app.use(express.urlencoded({extended: true}));
 app.use(morgan('dev'));
 
 // home  page
-app.get('', (req, res) => {
-    res.redirect('blogs')
+app.get('/', (req, res) => {
+    res.redirect('/blogs')
 });
 
 // about page
-app.get('about', (req, res) => {
+app.get('/about', (req, res) => {
     res.render("about", {title: 'About'});
 });
 
 // blog routes
-app.use('blogs', blogRoutes);
+app.use('/blogs', blogRoutes);
 
 // 404 page
 app.use((req, res) => {
