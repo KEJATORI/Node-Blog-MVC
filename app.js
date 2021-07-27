@@ -12,7 +12,7 @@ const dbURI = 'mongodb+srv://kejatori:kejatori1399@cluster0.jpd4b.mongodb.net/no
 mongoose.connect(dbURI, {useNewUrlParser: true, useUnifiedTopology: true})
     .then((result) => {
         console.log('Listening');
-        app.listen(8000 || process.env.PORT);
+        app.listen(process.env.PORT || 8000);
     })
     .catch((err) => {
         console.log(err);
