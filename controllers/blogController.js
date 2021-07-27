@@ -28,9 +28,10 @@ const blog_create_get = (req, res) => {
 
 const blog_create_post = (req, res) => {
     const blog = new Blog(req.body);
-    Blog.create()
-        .then(result => {
+    Blog.create(blog)
+        .then(() => {
             res.redirect('/blogs');    
+            console.log(blog);
         })
         .catch(err => {
             console.log(err);
