@@ -28,7 +28,7 @@ app.use(express.urlencoded({extended: true}));
 app.use(morgan('dev'));
 
 // home  page
-app.get('', (req, res) => {
+app.get('/', (req, res) => {
     res.redirect('/blogs');
 })
 
