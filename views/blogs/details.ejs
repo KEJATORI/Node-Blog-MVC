@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include("../templates/head.ejs") %> 
+<body>
+
+    <div class="wrapper">
+        <%- include("../templates/nav.ejs") %> 
+
+        <div class="details content">
+            <h2><%= blog.title %></h2>
+            <h6><%= blog.snippet %></h6>
+            <div class="content">
+                <p><%= blog.body %> </p>
+            </div>
+            <a class="delete" data-doc="<%= blog._id %>">Delete</a>
+        </div>
+
+        <%- include("../templates/footer.ejs") %> 
+    </div>
+
+</body>
+
+<script>
+    const remove = document.querySelector('.delete');
+    remove.addEventListener('click', (e) => {
+        const endpoint = `/blogs/${remove.dataset.doc}`;
+        fetch(endpoint, {
+            method: 'DELETE'
+        })
+        .then((response) => {
+            response.json()
+            .then((data) => {
+                window.location.href = data.redirect;
+            })
+            .catch(err => {
+                console.log(err);
+            });
+        })
+        .catch(err => {
+            console.log(err);
+        });
+    });
+</script>
+
+</html>

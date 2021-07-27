@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Noto Serif', serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.wrapper{
+    max-width: 1200px;
+    width: 90%;
+}
+
+p, h1, h2, h3,a, ul{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    color: #222;
+}
+nav{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 60px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ddd;
+    text-transform: uppercase;
+}
+nav ul{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+nav li{
+    list-style-type: none;
+    margin-left: 20px;
+}
+nav h1{
+    font-size: 3em;
+}
+
+nav p, nav a{
+    color: #777;
+    font-weight: 300;
+}
+footer{
+    color: #777;
+    text-align: center;
+    margin: 80px auto 20px;
+}
+h2{
+    margin-bottom: 40px;
+    text-align: center;
+}
+h3{
+    text-transform: capitalize;
+    margin-bottom: 8px;
+}
+.create-blog form{
+    max-width: 400px;
+    margin: 0 auto;
+}
+.create-blog input,
+.create-blog textarea{
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+    padding: 8px;
+}
+.create-blog label{
+    display: block;
+}
+textarea{
+    height: 120px;
+    resize: vertical;
+}
+.create-blog button{
+    margin-top: 20px;
+    background-color: crimson;
+    color: white;
+    padding: 6px;
+    border: 0;
+    font-size: 1.2em;
+    cursor: pointer;
+}
+
+.blogs{
+    text-align: center;
+}
+.blog-container{
+    margin: 5%;
+    border: 1px solid rgb(238, 238, 238);
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+}
+
+.blog-container:hover{
+    border-left: 10px solid red;
+}
+
+h4{
+    padding: 10px;
+}
+
+h6{
+    padding: 5px;
+    text-align: center;
+}
+
+p{
+    text-align: justify;
+    text-indent: 10%;
+}
+
+.delete{
+    width: 120px;
+    display: block;
+    border-radius: 2px;
+    background-color:  rgb(173, 70, 62);
+    color: white;
+    padding: 10px;
+    margin: 10px auto;
+    text-align: center;
+    cursor: pointer;
+}
+
+.delete:hover{
+    opacity: .8;
+}
